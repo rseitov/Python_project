@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="" method = "POST">
+    {% csrf_token %}
+    <input type="text" name="kod_el" id="price" placeholder="версия" value="{{ elemet_data.kod_el }}" /><br /><br />
+    <input type="text" name="value" id="publish_year" placeholder="дата создания" value="{{ elemet_data.value }}" /><br /><br />
+
+    <button type="submit">Обновить</button>
+</form>
+
+</body>
+</html>

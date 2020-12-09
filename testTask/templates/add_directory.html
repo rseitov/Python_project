@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="" method = "POST">
+    {% csrf_token %}
+    <input type="text" name="name" id="name" placeholder="название" /><br /><br />
+    <input type="text" name="short_description" id="description" placeholder="короткое описание" /><br /><br />
+    <input type="text" name="full_description" id="author" placeholder="полное описание" /><br /><br />
+    <input type="text" name="version" id="publish_year" placeholder="версия" /><br /><br />
+    <input type="date" name="start_date" id="amount" placeholder="дата создания" /><br /><br />
+
+
+    <button type="submit">Добавить</button>
+</form>
+
+</body>
+</html>

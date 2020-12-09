@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="" method = "POST">
+    {% csrf_token %}
+
+    <select name="dir">
+        {%for dir in list%}
+            <option value="{{dir.id}}">{{dir.name}}</option>
+        {%endfor%}
+    </select>
+<br>
+<br>
+
+    <input type="text" name="code_input" id="publish_year" placeholder="код" /><br /><br />
+    <input type="text" name="value_input" id="amount" placeholder="значение" /><br /><br />
+
+
+    <button type="submit">Добавить</button>
+</form>
+
+</body>
+</html>

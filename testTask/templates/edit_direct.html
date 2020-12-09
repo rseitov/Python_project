@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="" method = "POST">
+    {% csrf_token %}
+    <input type="text" name="name" id="name" placeholder="название" value="{{ sp.name }}" /><br /><br />
+    <input type="text" name="short_description" id="description" placeholder="короткое описание" value="{{ sp.short_description }}" /><br /><br />
+    <input type="text" name="full_description" id="author" placeholder="полное описание" value="{{ sp.full_description }}" /><br /><br />
+    <input type="text" name="version" id="price" placeholder="версия" value="{{ sp.version }}" /><br /><br />
+    <input type="date" name="start_date" id="publish_year" placeholder="дата создания" value="{{ sp.start_date }}" /><br /><br />
+
+    <button type="submit">Обновить</button>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<link rel="stylesheet" href="https://bootstraptema.ru/plugins/2015/bootstrap3/bootstrap.min.css" />
+<link rel="stylesheet" href="https://bootstraptema.ru/plugins/font-awesome/4-4-0/font-awesome.min.css" />
+<link href='https://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
+<link href="https://bootstraptema.ru/snippets/element/2020/bootstrap-table.css" rel="stylesheet" />
+<script src="https://bootstraptema.ru/plugins/jquery/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="http://bootstraptema.ru/plugins/2015/b-v3-3-6/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://bootstraptema.ru/snippets/element/2020/bootstrap-table.js"></script>
+
+<div class="wrapper">
+ <div class="container">
+ <div class="row">
+ <div class="col-md-8 col-md-offset-2">
+
+ <h3 class="fresh-table toolbar-color-blue">
+
+<br>
+<br>
+ <div class="toolbar">
+     <button id="alertBtn" class="btn btn-default"><a href = "{% url 'add_el_direct' %}">Добавить элемент</a></button>
+ </div>
+
+ <table id="fresh-table" class="table">
+ <thead>
+ <th data-field="id">№</th>
+ <th data-field="name" data-sortable="true">Name</th>
+ <th data-field="city">Edit</th>
+
+ </thead>
+ <tbody>
+{%for val in list%}
+ <tr>
+ <td>{{ val.id}}</td>
+ <td>{{val.value}}</td>
+<td><a href="{% url 'edit_elemet_direct' id=val.id %}">Обновить</a> - <a href="{% url 'delete_el_direct' id=val.id %}">Удалить</a></td></td>
+<td></td>
+ </tr>
+ {% endfor %}
+ </tbody>
+ </table>
+
+     <h3></h3><a href="{% url 'directory' %}">Назад</a></h3>
+ </div>
+ </div>
+ </div>
+ </div>
+</div>

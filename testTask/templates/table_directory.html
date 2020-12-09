@@ -1,0 +1,53 @@
+<link rel="stylesheet" href="https://bootstraptema.ru/plugins/2015/bootstrap3/bootstrap.min.css" />
+<link rel="stylesheet" href="https://bootstraptema.ru/plugins/font-awesome/4-4-0/font-awesome.min.css" />
+<link href='https://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
+<link href="https://bootstraptema.ru/snippets/element/2020/bootstrap-table.css" rel="stylesheet" />
+<script src="https://bootstraptema.ru/plugins/jquery/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="http://bootstraptema.ru/plugins/2015/b-v3-3-6/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://bootstraptema.ru/snippets/element/2020/bootstrap-table.js"></script>
+
+<div class="wrapper">
+ <div class="container">
+ <div class="row">
+ <div class="col-md-8 col-md-offset-2">
+
+ <div class="fresh-table toolbar-color-blue">
+
+<br>
+<br>
+ <div class="toolbar">
+     <button id="alertBtn" class="btn btn-default"><a href = "{% url 'add_directory' %}">Добавить новый справочник</a></button>
+ </div>
+
+ <table id="fresh-table" class="table">
+ <thead>
+ <th data-field="id">ID</th>
+ <th data-field="name" data-sortable="true">Name</th>
+ <th data-field="salary" data-sortable="true">Short_description</th>
+ <th data-field="country" data-sortable="true">Full_description</th>
+ <th data-field="city">version</th>
+ <th data-field="city">Date</th>
+ <th data-field="city">Edit</th>
+ <th data-field="city">Link</th>
+ </thead>
+ <tbody>
+ {% for s in sp %}
+ <tr>
+ <td>{{ s.id }}</td>
+ <td>{{s.name}}</td>
+ <td>{{s.short_description}}</td>
+ <td>{{s.full_description}}</td>
+ <td>{{s.version}}</td>
+ <td>{{s.start_date}}</td>
+<td><a href="{% url 'edit_elemet' id=s.id %}">Обновить</a> - <a href="{% url 'delete_element' id=s.id %}">Удалить</a></td></td>
+<td><a href = "{% url 'get_sp_info' id=s.id %}">перейти</a></td>
+<td></td>
+ </tr>
+ {% endfor %}
+ </tbody>
+ </table>
+ </div>
+ </div>
+ </div>
+ </div>
+</div>
